@@ -8,6 +8,7 @@ const app = express();
 const productRoutes = require("./routes/productRoute.js");
 const inventoryRoutes = require("./routes/inventoryRoute.js");
 const warehouseRoutes = require("./routes/warehouseRoute.js");
+const orderRoutes = require("./routes/orderRoute.js");
 
 
 app.use(cors());
@@ -32,6 +33,7 @@ app.get("/db-test", async (req, res) => {
 app.use("/api/products", productRoutes);
 app.use("/api/inventory", inventoryRoutes);
 app.use("/api/warehouses", warehouseRoutes);
+app.use("/api/orders", orderRoutes);
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
